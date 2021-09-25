@@ -358,7 +358,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
-        
+        try{
         if (jTextField1.getText().trim().isBlank()){
             dolar = 0;
             
@@ -377,6 +377,10 @@ public class Principal extends javax.swing.JFrame {
             if (jCheckBox2.isSelected()) convertir(jTextField3, pesoArgentino);
             if (jCheckBox3.isSelected()) convertir(jTextField4, solPeruano);
             if (jCheckBox4.isSelected()) convertir(jTextField5, pesoColombiano);
+        }
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "ERROR: "+e.getMessage());
+            jTextField1.setText("");
         }
     }//GEN-LAST:event_jTextField1KeyReleased
 
